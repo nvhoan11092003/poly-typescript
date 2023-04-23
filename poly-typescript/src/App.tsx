@@ -1,17 +1,20 @@
-import { useState } from 'react'
-
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import ProductCreate from "./page/create_product"
+import ProductUpdate from "./page/update"
 function App() {
-  const [count, setCount] = useState(0)
+  <BrowserRouter>
+    <Routes>
+      <Route path="homepage">12312313</Route>
+      <Route path="products/:id">detail pro</Route>
+      <Route path="/admin">
+        <Route index></Route>
+        <Route path="admin/products/create" element={<ProductCreate></ProductCreate>}></Route>
+        <Route path="products/delete/:id"></Route>
+        <Route path="/products/update/:id" element={<ProductUpdate></ProductUpdate>}></Route>
+      </Route>
+    </Routes>
+  </BrowserRouter>
 
-  return (
-    <div className="p-10">
-      <h1 className="text-4xl font-bold uppercase">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500">
-          Base project
-        </span>
-      </h1>
-    </div>
-  )
 }
 
 export default App
